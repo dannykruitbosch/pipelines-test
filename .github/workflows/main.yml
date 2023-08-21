@@ -35,11 +35,8 @@ jobs:
           REGISTRY: some-registry
           REPOSITORY: connector-stats
           BUILD_MAJOR_VERSION: 1
-          BUILD_DATE: ${{ date +'%Y%m%d' }}
-          BUILD_IMAGE_TAG: ${BUILD_MAJOR_VERSION}.${BUILD_DATE}.${GITHUB_RUN_NUMBER}
         run: |
-          echo "Tag: ${{env.BUILD_IMAGE_TAG}}"
-          echo "IMAGE_TAG=${{ env.BUILD_MAJOR_VERSION }}.${{ env.BUILD_DATE }}.$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
+          echo "IMAGE_TAG=${{ env.BUILD_MAJOR_VERSION }}.$(date '+%Y%m%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
       - name: Build and push image
         run: |
           env
