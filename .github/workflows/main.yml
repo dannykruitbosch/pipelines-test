@@ -42,4 +42,4 @@ jobs:
       - name: Build and push image
         run: |
           env
-          echo "Image tag will be: $IMAGE_TAG and full repo url $IMAGE"
+          echo "Image tag will be: ${{env.IMAGE_TAG}} and full repo url ${{env.IMAGE}}"
