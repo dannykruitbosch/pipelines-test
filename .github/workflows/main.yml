@@ -40,4 +40,4 @@ jobs:
           echo "IMAGE_TAG=${{ env.BUILD_MAJOR_VERSION }}.${{ env.BUILD_DATE }}.$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
           echo "IMAGE=$REGISTRY/$REPOSITORY:${{env.IMAGE_TAG}}" >> $GITHUB_ENV
           env
-          echo "Image tag will be: ${{ env.IMAGE_TAG }} and full repo url ${{ env.IMAGE }}"
+          echo "Image tag will be: $IMAGE_TAG and full repo url $IMAGE"
