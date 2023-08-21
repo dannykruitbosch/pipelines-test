@@ -36,6 +36,6 @@ jobs:
       run: |
         IMAGE_BUILD_DATE=$(date '+%Y%m%d')
         IMAGE_TAG=${{ env.BUILD_MAJOR_VERSION }}.$IMAGE_BUILD_DATE.$GITHUB_RUN_NUMBER"
-        REPO_BASE=${{ steps.login-ecr.outputs.registry }}/${{ vars.CONTAINER_REPO_NAME }}"
+        REPO_BASE=${{ steps.login-ecr.outputs.registry }}/${{ vars.CONTAINER_IMAGE_REPO }}"
         echo "docker build -t $REPO_BASE:$IMAGE_TAG --pull --build-arg IMAGE_CREATED=$IMAGE_BUILD_DATE --build-arg IMAGE_VERSION=${{ env.BUILD_MAJOR_VERSION }} --build-arg IMAGE_REVISION=${{ github.sha }} ."
         echo "docker push $REPO_BASE:$IMAGE_TAG"
